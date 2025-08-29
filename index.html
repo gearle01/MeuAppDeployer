@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deployer Personalizado</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f0f0f0; padding: 20px; }
+        .container { background-color: white; padding: 30px; border-radius: 8px; max-width: 500px; margin: auto; }
+        label { display: block; margin: 15px 0 5px 0; font-weight: bold; }
+        input[type="text"] { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+        input[type="color"] { width: 100%; height: 40px; border: 1px solid #ccc; cursor: pointer; }
+        .file-select-btn { width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        #logo-filename { font-style: italic; color: #555; font-size: 12px; }
+        #deploy-btn { width: 100%; padding: 15px; font-size: 16px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 20px; }
+        #deploy-btn:disabled { background-color: #94d3a2; }
+        #status { margin-top: 20px; font-style: italic; color: #555; }
+        #result { margin-top: 20px; background-color: #e9f5ff; padding: 15px; border-radius: 5px; display: none; }
+        #new-link { font-weight: bold; word-wrap: break-word; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gerador de Link Personalizado</h1>
+        
+        <label for="original-link">1. Insira o Link Original:</label>
+        <input type="text" id="original-link" placeholder="https://exemplo.com/?id=123">
+
+        <label for="color-picker">2. Escolha a cor de fundo:</label>
+        <input type="color" id="color-picker" value="#228D68">
+
+        <label for="logo-btn">3. Escolha a Logo:</label>
+        <button id="logo-btn" class="file-select-btn">Selecionar Arquivo de Imagem</button>
+        <span id="logo-filename">Nenhum arquivo selecionado</span>
+
+        <button id="deploy-btn">4. Gerar Link</button>
+
+        <div id="status">Pronto para começar...</div>
+
+        <div id="result">
+            <p>Link gerado com sucesso:</p>
+            <p id="new-link"></p>
+        </div>
+    </div>
+    <script src="./renderer.js"></script>
+</body>
+</html>

