@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "name": "meuappdeployer",
   "version": "1.0.0",
@@ -13,4 +14,24 @@
     "electron": "^31.2.1",
     "firebase": "^11.4.0"
   }
+=======
+{
+  "name": "meuappdeployer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^31.2.1"
+  },
+   "dependencies": {
+    "electron": "^37.4.0",
+    "firebase": "^11.4.0"
+  }
+>>>>>>> 458222c21063fcd8fed25c018e8b669b847ef347
 }
